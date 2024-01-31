@@ -1,26 +1,10 @@
 from django.shortcuts import render
-
-posts = [
-    {
-        'author' : 'Ishan Gujarathi',
-        'title' : 'Blog Post 1',
-        'content' : 'First_Post_Content',
-        'date_posted' : 'January 30, 2024',
-    },
-
-    {
-        'author' : 'Akshat Gujarathi',
-        'title' : 'Blog Post 2',
-        'content' : 'Second_Post_Content',
-        'date_posted' : 'January 30, 2024',
-    },
-
-]
+from .models import Post
 
 def home(request):
 
     context = {
-        'posts':posts
+        'posts': Post.objects.all()  #directly fetching the data from the Post Database that was created in the models.py file
     }
     return render(request,'blog/home.html',context)
 
