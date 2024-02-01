@@ -6,19 +6,19 @@
         {% csrf_token %}
         <!--In summary, {% csrf_token %} is a Django template tag that helps protect against CSRF attacks by including a unique token in forms, which is then verified on the server side when the form is submitted. It's an essential part of securing web applications built with Django-->
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Join Today</legend>
+            <legend class="border-bottom mb-4">Log In</legend>
             {{ form | crispy }} 
 
         </fieldset>
 
         <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            <button class="btn btn-outline-info" type="submit">Login</button>
         </div>
     </form>
 
     <div class="border-top pt-3">
         <small class="text-muted">
-            Already have an Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+            Need an Account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
         </small>
     </div>
 </div>
